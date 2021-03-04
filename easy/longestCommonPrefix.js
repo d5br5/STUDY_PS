@@ -15,7 +15,7 @@ var longestCommonPrefix = function(strs) {
                 common = common.concat(pre);
 
             } else {
-                break;
+                return common;
             }
         }
         return common;
@@ -31,24 +31,18 @@ var longestCommonPrefix = function(strs) {
             minIndex = i;
         }
     }
-    console.log(lens);
+    if (lens.length == 0) {
+        return "";
+    }
     comm = strs[minIndex];
 
-    i = 0;
-    while (i < strs.length) {
-        console.log(i);
-        console.log(strs.length);
-
-        comm = compare(strs[i], comm);
-        console.log(33333333);
-        console.log(comm + 3);
-
-        i++;
+    j = 0;
+    while (j < strs.length) {
+        comm = compare(strs[j], comm);
+        j++;
     }
 
-
-    console.log(comm);
-
+    return comm;
 };
 
 longestCommonPrefix(["dogessdd", "dogecar", "dogssdd"]);
