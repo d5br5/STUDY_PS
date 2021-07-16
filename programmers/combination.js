@@ -11,8 +11,3 @@ function combination(source, target, n, r, count){
 
 const source = [1,2,3,4,5];
 const final = [];
-
-let str = '12345678';
-
-str2 = str.slice(0,1)+str.slice(2,3)+str.slice(7,7)
-console.log(str2)
