@@ -1,26 +1,38 @@
-function combination(source, target, n, r, count){
-    if(r===0) final.push(target);
-    else if(n===0 || n<r) return;
-    else {
-        target.push(source[count]);
-        combination(source, Object.assign([], target), n-1, r-1, count+1);
-        target.pop();
-        combination(source, Object.assign([], target), n-1, r, count+1);
+function solution(orders, course) {
+    let res =[];
+    for(let i=0; i<course.length; i++){
+        let num = course[i];
+        let allDiv = [];
+        for(let i=0; i<orders.length; i++){
+            let div = orders[i].split("").sort((a,b)=>a.charCodeAt(0)-b.charCodeAt(0));
+            let converted = getAllCombinations(div, num);
+            allDiv.push(...converted);
+        }
+        allDiv = allDiv.map(a=>a.join(""))
+        let set = [];
+        allDiv.forEach(a=>{if(!set.includes(a)){set.push(a)}})
+        let setObj = {};
+        allDiv.forEach(a=>{if(setObj[a]){setObj[a]+=1}else{setObj[a]=1}})
+        let max = 2;
+        for(let i=0; i<set.length; i++){
+            if(setObj[set[i]]>max) max = setObj[set[i]];
+        }
+        for(let i=0; i<set.length; i++){
+            if(setObj[set[i]]===max) res.push(set[i]);
+        }
     }
-}
 
-const source = [1,2,3,4,5];
-const final = [];
+    res.sort();
+    return res
+}
 
 function getAllCombinations(arr, m) {
     const combinations = [];
     const picked = [];
     const used = [];
-    for (item of arr) used.push(0);
     for(let i=0; i<arr.length; i++){
         used.push(0);
     }
-
     function find(picked) {
         if (picked.length === m) {
             const rst = [];
