@@ -1,3 +1,5 @@
+// 다시 풀기
+
 function solution(stones, k) {
     if (stones.length === 1) return stones[0];
     let now = findMin(stones);
