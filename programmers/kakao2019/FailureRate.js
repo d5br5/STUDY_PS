@@ -1,3 +1,5 @@
+// 20m
+
 function solution(N, stages) {
 	let stage = [];
 	for (let i = 1; i <= N; i++) {

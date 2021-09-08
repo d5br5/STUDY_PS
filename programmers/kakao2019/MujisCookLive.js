@@ -1,3 +1,5 @@
+// 1h 30m
+
 function solution(food_times, k) {
 	let app = [];
 	for (let i = 0; i < food_times.length; i++) {

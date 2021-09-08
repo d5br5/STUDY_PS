@@ -1,3 +1,5 @@
+// xx
+
 function solution(relation) {
 	let totalCategory = relation[0].length;
 	let max = 1;

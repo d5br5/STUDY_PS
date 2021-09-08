@@ -1,3 +1,5 @@
+// 10m
+
 function solution(record) {
 	let ids = {};
 	let result = [];
@@ -17,5 +19,3 @@ function solution(record) {
 	}
 	return result;
 }
-
-// time 10minutes
