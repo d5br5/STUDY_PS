@@ -89,3 +89,75 @@ function solution2(relation) {
 
 	return sk.size;
 }
+
+function solution3(relation) {
+	let categoryCount = relation[0].length;
+	let index = [];
+	let valid = [];
+	let max = 0;
+	for (let i = 0; i < categoryCount; i++) {
+		index.push(i);
+	}
+	for (let i = 1; i <= categoryCount; i++) {
+		let nowCom = combination(index, i);
+		for (let j = 0; j < nowCom.length; j++) {
+			if (unique(nowCom[j])) valid.push(flat(nowCom[j]));
+			if (nowCom[j].length === 1) continue;
+			let nowFlat = combination(nowCom[j], nowCom[j].length - 1);
+			let ok = true;
+			for (let k = 0; k < nowFlat.length; k++) {
+				if (valid.includes(flat(nowFlat[k]))) {
+					ok = false;
+					break;
+				}
+			}
+			if (ok) {
+				if (max < i) max = i;
+			}
+		}
+	}
+	return max;
+
+	function unique(combi) {
+		let conducted = relation.map((a) => pick(a, combi));
+		let final = Array.from(new Set(conducted));
+		if (conducted.length === final.length) return true;
+		return false;
+	}
+}
+
+function pick(arr, index) {
+	let string = "";
+	for (let i = 0; i < arr.length; i++) {
+		if (index.includes(i)) string += arr[i] + ",";
+	}
+	return string;
+}
+
+function flat(arr) {
+	let string = "";
+	for (let i = 0; i < arr.length - 1; i++) {
+		string += arr[i] + ",";
+	}
+	return string + arr[arr.length - 1];
+}
+
+function combination(arr, num) {
+	let result = [];
+	if (num === 0) return;
+	function DFS(count, start) {
+		if (start.length === num) {
+			result.push(start);
+			return;
+		}
+		let point = arr.length - num + start.length;
+		for (let i = count + 1; i <= point; i++) {
+			DFS(i, [...start, arr[i]]);
+		}
+	}
+
+	for (let i = 0; i <= arr.length - num; i++) {
+		DFS(i, [arr[i]]);
+	}
+	return result;
+}
