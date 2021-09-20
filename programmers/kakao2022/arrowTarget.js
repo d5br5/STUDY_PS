@@ -50,13 +50,10 @@ function versus(app, lion) {
 	let lionPoint = 0;
 	for (let i = 0; i < app.length; i++) {
 		if (app[i] > lion[i]) {
-			// 어피치 많음
 			appPoint += 10 - i;
 		} else if (app[i] < lion[i]) {
-			//라이언 많음
 			lionPoint += 10 - i;
 		} else {
-			// 동률
 			if (app[i] === 0 && lion[i] === 0) {
 				continue;
 			} else {
