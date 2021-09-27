@@ -1,0 +1,9 @@
+HEAP 의 특징
+BFS 탐색 순서
+Tree 순회 문제 
+하삼각 행렬 원소번호 
+HTTPS response 구분
+정렬 - 이미 거의 정렬된 배열에 사용할 정렬방법
+Proxy, Cache 특징
+해시 충돌 해결 - 오픈 어드레싱의 기법이 아닌것
+paging cache 에 들어갈 순서
