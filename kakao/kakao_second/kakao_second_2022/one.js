@@ -93,11 +93,11 @@ const createGradeCommands = (gameResult, userInfo) => {
 			if (taken <= 10) {
 				winnerGradeAfter = 6000;
 			} else if (taken <= 20) {
-				winnerGradeAfter = 6500;
-			} else if (taken <= 30) {
 				winnerGradeAfter = 5500;
-			} else {
+			} else if (taken <= 30) {
 				winnerGradeAfter = 5000;
+			} else {
+				winnerGradeAfter = 4500;
 			}
 		} else {
 			winnerGradeAfter =
@@ -106,13 +106,13 @@ const createGradeCommands = (gameResult, userInfo) => {
 		}
 		if (loserGradeBefore === 0) {
 			if (taken <= 10) {
-				loserGradeAfter = 2500;
+				loserGradeAfter = 2000;
 			} else if (taken <= 20) {
-				loserGradeAfter = 3000;
+				loserGradeAfter = 2500;
 			} else if (taken <= 30) {
-				loserGradeAfter = 3500;
+				loserGradeAfter = 3000;
 			} else {
-				loserGradeAfter = 4000;
+				loserGradeAfter = 3500;
 			}
 		} else {
 			loserGradeAfter =
