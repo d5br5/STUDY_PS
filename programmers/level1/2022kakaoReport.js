@@ -1,32 +1,4 @@
 function solution(id_list, report, k) {
-	let reportFilter = Array.from(new Set(report));
-	let total = {};
-	for (let i = 0; i < id_list.length; i++) {
-		total[id_list[i]] = [i, id_list[i], []];
-	}
-
-	let reported = {};
-
-	for (let i = 0; i < reportFilter.length; i++) {
-		let [from, to] = reportFilter[i].split(" ");
-		total[from][2].push(to);
-		if (reported[to]) {
-			reported[to] += 1;
-		} else {
-			reported[to] = 1;
-		}
-	}
-
-	let values = Object.values(total);
-	let result = values.map((a) => {
-		let whom = a[2];
-		let count = whom.filter((b) => reported[b] >= k).length;
-		return count;
-	});
-	return result;
-}
-
-function solution(id_list, report, k) {
 	const reportmap = new Map();
 	const frommap = new Map();
 
@@ -52,4 +24,32 @@ function solution(id_list, report, k) {
 					.length
 			: 0
 	);
+}
+
+function solution(id_list, report, k) {
+	let reportFilter = Array.from(new Set(report));
+	let total = {};
+	for (let i = 0; i < id_list.length; i++) {
+		total[id_list[i]] = [i, id_list[i], []];
+	}
+
+	let reported = {};
+
+	for (let i = 0; i < reportFilter.length; i++) {
+		let [from, to] = reportFilter[i].split(" ");
+		total[from][2].push(to);
+		if (reported[to]) {
+			reported[to] += 1;
+		} else {
+			reported[to] = 1;
+		}
+	}
+
+	let values = Object.values(total);
+	let result = values.map((a) => {
+		let whom = a[2];
+		let count = whom.filter((b) => reported[b] >= k).length;
+		return count;
+	});
+	return result;
 }
