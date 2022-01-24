@@ -1,6 +1,6 @@
 let {auth_key: twoKey, time: twoTime} = await START(2);
 
-// console.log(twoKey, twoTime);
+// console.log(twoKey, `twoTime);
 
 while (twoTime < 720) {
 	let {
