@@ -2,7 +2,6 @@
 
 function combine(n: number, k: number): number[][] {
 	let result = [];
-
 	for (let i = 1; i <= n - k + 1; i++) {
 		DFS([i], k);
 	}
