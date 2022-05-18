@@ -1,4 +1,4 @@
-/**
+/** time exceed
  * @param {number[]} height
  * @return {number}
  */
