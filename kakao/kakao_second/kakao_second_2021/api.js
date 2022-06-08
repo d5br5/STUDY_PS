@@ -1,9 +1,8 @@
 import axios from "axios";
 
-const BASE_URL =
-	"https://huqeyhi95c.execute-api.ap-northeast-2.amazonaws.com/prod";
+const BASE_URL = "https://huqeyhi95c.execute-api.ap-northeast-2.amazonaws.com/prod";
 
-const X_Auth_Token = "8d9e04880b49dc045094a021b4c752b9";
+const X_Auth_Token = "classified";
 const Content_Type = "application/json";
 
 export const START = async (problem) => {
