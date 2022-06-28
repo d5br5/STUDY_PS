@@ -20,7 +20,6 @@ var rangeBitwiseAnd = function (left, right) {
  * @return {number}
  */
 var rangeBitwiseAnd = function (left, right) {
-	let shift = 0;
 	while (left < right) {
 		right &= right - 1;
 	}
