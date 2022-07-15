@@ -10,10 +10,7 @@ class ListNode {
 
 //* 0504 7913
 
-function mergeTwoLists(
-	list1: ListNode | null,
-	list2: ListNode | null
-): ListNode | null {
+function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode | null {
 	const merged = new ListNode();
 	let curr = merged;
 
@@ -60,11 +57,8 @@ function mergeTwoLists(
 	return merged.next;
 }
 
-// * 2808 2987
-function mergeTwoLists2(
-	list1: ListNode | null,
-	list2: ListNode | null
-): ListNode | null {
+// * 6607 5974
+function mergeTwoLists2(list1: ListNode | null, list2: ListNode | null): ListNode | null {
 	const merged = new ListNode();
 	let curr = merged;
 
@@ -83,11 +77,8 @@ function mergeTwoLists2(
 	return merged.next;
 }
 
-// * 1001 8433
-function mergeTwoLists3(
-	list1: ListNode | null,
-	list2: ListNode | null
-): ListNode | null {
+// * 1001 9138
+function mergeTwoLists3(list1: ListNode | null, list2: ListNode | null): ListNode | null {
 	if (list1 === null) {
 		return list2;
 	} else if (list2 === null) {

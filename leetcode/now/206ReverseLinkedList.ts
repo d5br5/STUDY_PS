@@ -22,7 +22,7 @@ function reverseList(head: ListNode206 | null): ListNode206 | null {
 	return pre;
 }
 
-// * 0738 2203
+// * 9256 2309
 function reverseList2(head: ListNode206 | null): ListNode206 | null {
 	if (head === null || head.next === null) return head;
 	let next = reverseList(head.next);
