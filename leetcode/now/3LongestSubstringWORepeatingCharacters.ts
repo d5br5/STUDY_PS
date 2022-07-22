@@ -1,4 +1,4 @@
-// 6068 5066
+// 6068 6500
 
 function lengthOfLongestSubstring(s: string): number {
 	let result: number = 0;
