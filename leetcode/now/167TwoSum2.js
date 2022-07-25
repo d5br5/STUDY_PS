@@ -13,7 +13,7 @@ var twoSum = function (numbers, target) {
 };
 
 /** time exceed
- * pass 19/21
+ * pass 18/21
  * @param {number[]} numbers
  * @param {number} target
  * @return {number[]}
