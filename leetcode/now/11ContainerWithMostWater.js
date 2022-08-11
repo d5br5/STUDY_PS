@@ -3,9 +3,10 @@
  * @return {number}
  */
 var maxArea = function (height) {
+	let max = 0;
 	let left = 0;
 	let right = height.length - 1;
-	let max = 0;
+
 	while (left < right) {
 		let area = Math.min(height[left], height[right]) * (right - left);
 		if (max < area) max = area;
