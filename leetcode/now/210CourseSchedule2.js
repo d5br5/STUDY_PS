@@ -36,13 +36,13 @@ var findOrder = function (numCourses, prerequisites) {
 	return result;
 };
 
-/** 4853 4795
+/** 5551 8111
  * @param {number} numCourses
  * @param {number[][]} prerequisites
  * @return {number[]}
  */
 var findOrder = function (numCourses, prerequisites) {
-	let inNode = Array.from({ length: numCourses }, () => 0);
+	let inNode = new Array(numCourses).fill(0);
 	let graph = Array.from({ length: numCourses }, () => []);
 	let visited = new Array(numCourses).fill(false);
 
