@@ -1,4 +1,4 @@
-function combination(source, target, n, r, count) {
+function combination22(source, target, n, r, count) {
 	if (r === 0) final.push(target);
 	else if (n === 0 || n < r) return;
 	else {
@@ -49,20 +49,18 @@ function getAllCombinations(arr, m) {
 function combination(arr, num) {
 	let result = [];
 	if (num === 0) return;
-	function DFS(count, start) {
-		if (start.length === num) {
-			result.push(start);
+	function DFS(index, combi) {
+		if (combi.length === num) {
+			result.push(combi);
 			return;
 		}
-		let point = arr.length - num + start.length;
-		for (let i = count + 1; i <= point; i++) {
-			DFS(i, [...start, arr[i]]);
+		let point = arr.length - num + combi.length;
+		for (let i = index + 1; i <= point; i++) {
+			DFS(i, [...combi, arr[i]]);
 		}
 	}
-
-	for (let i = 0; i <= arr.length - num; i++) {
-		DFS(i, [arr[i]]);
-	}
+	DFS(-1, []);
 	return result;
-	// return result.map((a) => a.join(""));
 }
+
+console.log(combination([1, 2, 3], 2));

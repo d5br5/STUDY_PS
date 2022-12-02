@@ -3,10 +3,7 @@ const permutations = (arr) => {
 	return arr.reduce(
 		(acc, item, i) =>
 			acc.concat(
-				permutations([...arr.slice(0, i), ...arr.slice(i + 1)]).map((val) => [
-					item,
-					...val,
-				])
+				permutations([...arr.slice(0, i), ...arr.slice(i + 1)]).map((val) => [item, ...val])
 			),
 		[]
 	);
@@ -15,21 +12,19 @@ const permutations = (arr) => {
 permutations([1, 33, 5]);
 // [ [1, 33, 5], [1, 5, 33], [33, 1, 5], [33, 5, 1], [5, 1, 33], [5, 33, 1] ]
 
-function Perms(arr, num) {
+function permutation(arr, num) {
 	let result = [];
-	function DFS(count, start, indexes) {
-		if (count === num) {
-			result.push(start);
+	function DFS(perm) {
+		if (perm.length === num) {
+			result.push(perm);
 			return;
 		}
 		for (let i = 0; i < arr.length; i++) {
-			if (!indexes.includes(i))
-				DFS(count + 1, [...start, arr[i]], [...indexes, i]);
+			if (!perm.includes(arr[i])) DFS([...perm, arr[i]]);
 		}
 	}
-
-	for (let i = 0; i < arr.length; i++) {
-		DFS(1, [arr[i]], [i]);
-	}
+	DFS([]);
 	return result;
 }
+
+console.log(permutation([1, 2, 3], 2));
