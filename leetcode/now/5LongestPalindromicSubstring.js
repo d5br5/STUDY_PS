@@ -67,3 +67,26 @@ var longestPalindrome = function (s) {
 };
 
 // 참고 : manacher
+
+/** 0910 1022
+ * @param {string} s
+ * @return {string}
+ */
+var longestPalindrome = function (s) {
+	let result = "";
+	let table = Array.from({ length: s.length }, () => Array.from({ length: s.length }, () => false));
+
+	for (let i = 1; i <= s.length; i++) {
+		for (let j = 0; j <= s.length - i; j++) {
+			table[j][j + i - 1] =
+				i === 1
+					? true
+					: i === 2 && s[j] === s[j + 1]
+					? true
+					: table[j + 1][j + i - 2] && s[j] === s[j + i - 1];
+			if (table[j][j + i - 1] && result.length < i) result = s.slice(j, j + i);
+		}
+	}
+
+	return result;
+};
